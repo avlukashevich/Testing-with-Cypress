@@ -78,16 +78,6 @@ context('Learning arrays', () => {
 		cy.log('===Длина массива===');
 		cy.log(planetsArray.length);
 	})
-	//Задание 10
-	//Автотест для конвертера валют
-	/*it('Testing currencyconverter', () => {
-		cy.fixture('currency').then (currency =>{
-			cy.request ('GET','https://www.xe.com/currencyconverter/' , currency).then(Response => {
-				expect(Response.status).to.eq(200)
-				}
-			)
-		})
-	})*/
 })
 
 
