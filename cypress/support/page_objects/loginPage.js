@@ -2,19 +2,19 @@
 
 class LoginPage {
     open() {
-        cy.visit(`${Cypress.env('sauceURL')}`);
+        cy.visit(`${Cypress.env('sauceURL')}`)
     }
 
     get usernameInput() {
-        return cy.get('[data-test=username]');
+        return cy.get('[data-test=username]')
     }
 
     get passwordInput() {
-        return cy.get('[data-test=password]');
+        return cy.get('[data-test=password]')
     }
 
     get loginButton() {
-        return cy.get('#login-button');
+        return cy.get('#login-button')
     }
 
     get errorMessage() {
@@ -22,15 +22,15 @@ class LoginPage {
     }
 
     typeUserName(name) {
-        this.usernameInput.type(`${name}{enter}`);
+        this.usernameInput.type(`${name}{enter}`)
     }
 
     typeUserPassword(password) {
-        this.passwordInput.type(`${password}{enter}`);
+        this.passwordInput.type(`${password}{enter}`)
     }
 
     clickLogin() {
-        this.loginButton.click();
+        this.loginButton.click()
     }
 }
 
