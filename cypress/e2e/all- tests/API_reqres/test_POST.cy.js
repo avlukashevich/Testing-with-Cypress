@@ -8,9 +8,9 @@ context('Testing POST method in reqres', () => {
         expect(response.body).to.have.property('name', user.name);
         expect(response.body).to.have.property('job', user.job);
         expect(response.body).to.have.property('id', user.id);
-      });
-    });
-  });
+      })
+    })
+  })
 
   it('Positive test: register a user', () => {
     cy.fixture('registerUser').then((user) => {
@@ -18,18 +18,18 @@ context('Testing POST method in reqres', () => {
         expect(response.status).to.eq(200);
         expect(response.body).to.have.property('id', 4);
         expect(response.body).to.have.property('token', 'QpwL5tke4Pnpja7X4');
-      });
-    });
-  });
+      })
+    })
+  })
 
   it('Positive test: login an existing user', () => {
     cy.fixture('loginUser').then((user) => {
       cy.request('POST', '/api/login', user).then((response) => {
         expect(response.status).to.eq(200);
         expect(response.body).to.have.property('token', 'QpwL5tke4Pnpja7X4');
-      });
-    });
-  });
+      })
+    })
+  })
 
   it('Negative test: login unsuccessful', () => {
     cy.request({
@@ -43,8 +43,8 @@ context('Testing POST method in reqres', () => {
     }).then((response) => {
       expect(response.status).to.eq(400);
       expect(response.body).to.have.property('error', 'Missing password');
-    });
-  });
+    })
+  })
 
   it('Negative test: register unsuccessful', () => {
     cy.request({
@@ -58,9 +58,9 @@ context('Testing POST method in reqres', () => {
     }).then((response) => {
       expect(response.status).to.eq(400);
       expect(response.body).to.have.property('error', 'Missing password');
-    });
-  });
-});
+    })
+  })
+})
 
 context('Parametrized test for creating a user', () => {
   const testingData = [
@@ -83,7 +83,7 @@ context('Parametrized test for creating a user', () => {
         expect(response.status).to.eq(201);
         expect(response.body).to.have.property('name', requestData.name);
         expect(response.body).to.have.property('job', requestData.job);
-      });
-    });
-  });
-});
+      })
+    })
+  })
+})
