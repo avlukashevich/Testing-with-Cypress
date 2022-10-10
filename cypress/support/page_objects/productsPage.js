@@ -1,15 +1,15 @@
 class ProductsPage {
 
     get product() {
-        return cy.get('.inventory_item');
+        return cy.get('.inventory_item')
     }
 
     get productName() {
-        return cy.get('.inventory_item_name');
+        return cy.get('.inventory_item_name')
     }
 
     get productPrice() {
-        return cy.get('.inventory_item_price');
+        return cy.get('.inventory_item_price')
     }
 
     get productsFilter() {
