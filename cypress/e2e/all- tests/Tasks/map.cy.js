@@ -56,10 +56,10 @@ context('Testing map', () => {
       radius: 2440,
       density: 5.43,
       distance: 0.395,
-    };
+    }
 
     for (const value in planetA) {
       cy.log(`${value}:${planetA[value]}`)
     }
-  });
-});
+  })
+})
