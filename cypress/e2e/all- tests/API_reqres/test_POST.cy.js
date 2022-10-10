@@ -4,10 +4,10 @@ context('Testing POST method in reqres', () => {
   it('Positive test: create a user', () => {
     cy.fixture('createUser').then((user) => {
       cy.request('POST', '/api/users', user).then((response) => {
-        expect(response.status).to.eq(201);
-        expect(response.body).to.have.property('name', user.name);
-        expect(response.body).to.have.property('job', user.job);
-        expect(response.body).to.have.property('id', user.id);
+        expect(response.status).to.eq(201)
+        expect(response.body).to.have.property('name', user.name)
+        expect(response.body).to.have.property('job', user.job)
+        expect(response.body).to.have.property('id', user.id)
       })
     })
   })
@@ -15,9 +15,9 @@ context('Testing POST method in reqres', () => {
   it('Positive test: register a user', () => {
     cy.fixture('registerUser').then((user) => {
       cy.request('POST', '/api/register', user).then((response) => {
-        expect(response.status).to.eq(200);
-        expect(response.body).to.have.property('id', 4);
-        expect(response.body).to.have.property('token', 'QpwL5tke4Pnpja7X4');
+        expect(response.status).to.eq(200)
+        expect(response.body).to.have.property('id', 4)
+        expect(response.body).to.have.property('token', 'QpwL5tke4Pnpja7X4')
       })
     })
   })
@@ -25,8 +25,8 @@ context('Testing POST method in reqres', () => {
   it('Positive test: login an existing user', () => {
     cy.fixture('loginUser').then((user) => {
       cy.request('POST', '/api/login', user).then((response) => {
-        expect(response.status).to.eq(200);
-        expect(response.body).to.have.property('token', 'QpwL5tke4Pnpja7X4');
+        expect(response.status).to.eq(200)
+        expect(response.body).to.have.property('token', 'QpwL5tke4Pnpja7X4')
       })
     })
   })
@@ -41,8 +41,8 @@ context('Testing POST method in reqres', () => {
         email: 'peter@klaven',
       },
     }).then((response) => {
-      expect(response.status).to.eq(400);
-      expect(response.body).to.have.property('error', 'Missing password');
+      expect(response.status).to.eq(400)
+      expect(response.body).to.have.property('error', 'Missing password')
     })
   })
 
@@ -56,8 +56,8 @@ context('Testing POST method in reqres', () => {
         email: 'sydney@fife',
       },
     }).then((response) => {
-      expect(response.status).to.eq(400);
-      expect(response.body).to.have.property('error', 'Missing password');
+      expect(response.status).to.eq(400)
+      expect(response.body).to.have.property('error', 'Missing password')
     })
   })
 })
@@ -80,9 +80,9 @@ context('Parametrized test for creating a user', () => {
   testingData.forEach(({ description, requestData }) => {
     it(`Positive: POST request - create a user (random values) - ${description}`, () => {
       cy.request('POST', '/api/users', requestData).then((response) => {
-        expect(response.status).to.eq(201);
-        expect(response.body).to.have.property('name', requestData.name);
-        expect(response.body).to.have.property('job', requestData.job);
+        expect(response.status).to.eq(201)
+        expect(response.body).to.have.property('name', requestData.name)
+        expect(response.body).to.have.property('job', requestData.job)
       })
     })
   })
